@@ -1,0 +1,16 @@
+// filepath: /CroxincWebsite/CroxincWebsite/store/index.js
+export const state = () => ({
+  // Define your state properties here
+});
+
+export const mutations = {
+  // Define your mutations here
+};
+
+export const actions = {
+  // Define your actions here
+};
+
+export const getters = {
+  // Define your getters here
+};

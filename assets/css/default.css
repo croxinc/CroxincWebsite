@@ -1,0 +1,12 @@
+a {
+    text-decoration: none;
+    color: inherit;
+
+    &dark{
+        color: rgba(0, 0, 0, 1);        
+    }
+
+    &light{
+        color: rgba(255, 255, 255, 1);
+    }
+}
