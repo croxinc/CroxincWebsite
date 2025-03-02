@@ -72,7 +72,8 @@ onMounted(() => {
     width: 100vw;
     height: 100vh;
     background-repeat: no-repeat;
-    background-image: url('~/assets/images/bg_home.jpg');
+    /* background-image: url('~/assets/images/bg_home.jpg'); */
+    background-image: url('/images/bg_home.jpg');
     background-size: cover;
     background-position: center;
     z-index: -1;

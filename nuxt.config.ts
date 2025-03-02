@@ -4,14 +4,14 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/default.css'],
   modules: ['@nuxt/image'],
-  image: {
-    dir: 'assets/images',
-  },
+  // image: {
+  //   dir: 'assets/images',
+  // },
   app: {
     baseURL: '/'
   },
   // ssr: false,
-  // nitro: {
-  //   preset: 'assets'
-  // },
+  nitro: {
+    preset: 'static'
+  },
 })
