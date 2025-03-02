@@ -2,7 +2,9 @@
     <div class="container">
         <transition name="home-effects" @after-appear="leaveAnimationCompleted" @after-leave="leaveAnimationCompleted"
             @before-leave="AnimationBegin" @before-enter="AnimationBegin" appear mode="out-in">
-            <div v-if="showContent" class="background"></div>
+            <div v-if="showContent" class="background">
+                <NuxtImg src="bg_home.jpg" alt="background" loading="eager" style="width: 100%;height: 100%;" />
+            </div>
         </transition>
         <transition name="overlay-effects" appear>
             <div class="background-overlay"></div>
@@ -73,7 +75,7 @@ onMounted(() => {
     height: 100vh;
     background-repeat: no-repeat;
     /* background-image: url('~/assets/images/bg_home.jpg'); */
-    background-image: url('/images/bg_home.jpg');
+    /* background-image: url('/images/bg_home.jpg'); */
     background-size: cover;
     background-position: center;
     z-index: -1;
