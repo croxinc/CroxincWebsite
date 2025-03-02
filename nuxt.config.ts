@@ -4,9 +4,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/default.css'],
   modules: ['@nuxt/image'],
-  image: {
-    dir: 'public/images',
-  },
+  // image: {
+  //   dir: 'public/images',
+  // },
   app: {
     baseURL: '/'
   },
