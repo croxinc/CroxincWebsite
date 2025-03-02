@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     baseURL: '/'
   },
   ssr: false,
-  // nitro: {
-  //   preset: 'static'
-  // },
+  nitro: {
+    preset: 'static'
+  },
 })
