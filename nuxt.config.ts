@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     dir: 'assets/images',
   },
   app: {
-    baseURL: '/'
+    baseURL: '/www.croxinc.com/'
   },
   nitro: {
     preset: 'static'
