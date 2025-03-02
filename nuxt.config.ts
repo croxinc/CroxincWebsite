@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/'
   },
-  // ssr: false,
+  ssr: false,
   nitro: {
     preset: 'static'
   },
