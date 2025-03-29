@@ -12,15 +12,15 @@
         </Transition>
         <transition-group name="slide-up-title" appear>
             <ul :class="['contactItems', { 'mobile': deviceType == DeviceType.Mobile }]" :key="'x'">
-                <li v-for="(item, index) in contactMap" :key="item.link" v-if="showContent"
+                <li v-for="(item, index) in cItems" :key="item.link" v-if="showContent"
                     :class="['contactItem', { 'mobile': deviceType == DeviceType.Mobile }]">
                     <div :class="['itemContainer', { 'mobile': deviceType == DeviceType.Mobile }]">
-                        <NuxtLink :to="item.icon" target="_blank"
+                        <NuxtLink :to="item.link" target="_blank"
                             :class="['nuxtLink', { 'mobile': deviceType == DeviceType.Mobile }]">
-                            <NuxtImg :class="{ 'icon': true, 'mobile': deviceType == DeviceType.Mobile }"
-                                :src="`/${item.icon}`" :alt="item.name" loading="eager" /><span
-                                :class="['iconName', { 'mobile': deviceType == DeviceType.Mobile }]">{{
-                                    item.name }}</span>
+                            <img :class="{ 'icon': true, 'mobile': deviceType == DeviceType.Mobile }"
+                                :src="`${item.icon}`" :alt="item.name" loading="eager" />
+                            <span :class="['iconName', { 'mobile': deviceType == DeviceType.Mobile }]">{{
+                                item.name }}</span>
                         </NuxtLink>
                     </div>
                 </li>
@@ -51,7 +51,11 @@ let isAnimating = false;
 const deviceType = defineModel<DeviceType>('deviceType')
 const emit = defineEmits(['AnimationCompleted', 'AnimationStart']);
 
+// import { contactItems } from '~/utils/contactMap'
+// const contactItems = ref(contactItems);
 
+import contactItems from '~/utils/contactMap';
+const cItems = ref(contactItems);
 
 const isFormVisible = ref(false);
 
@@ -152,7 +156,7 @@ onMounted(() => {
 
 .itemContainer {
     flex: 1 1 50%;
-    height: 32px;    
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;

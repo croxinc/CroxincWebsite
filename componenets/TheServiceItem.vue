@@ -1,7 +1,10 @@
 <template>
     <div class="container">
         <Transition name="slide-up-item" appear>
-            <NuxtImg :src="icon" :alt="name + ' display'"
+            <!-- <NuxtImg :src="icon" :alt="name + ' display'"
+                :class="{ 'serviceIcon': true, 'mobile': deviceType == DeviceType.Mobile }" :style="itemStyle"
+                loading="eager" /> -->
+                <img :src="icon" :alt="name + ' display'"
                 :class="{ 'serviceIcon': true, 'mobile': deviceType == DeviceType.Mobile }" :style="itemStyle"
                 loading="eager" />
         </Transition>

@@ -3,8 +3,11 @@
     <ul class="container">
         <li v-for="(item, index) in socialMedias" :key="index">
             <NuxtLink :to="item.url" target="_blank" class="nuxtLink">
-                <NuxtImg :class="{ 'item': true, 'mobile': deviceType == DeviceType.Mobile }"
-                    :src="`/${theme == ThemeType.Dark ? 'dark' : 'light'}/${item.icon}`" :alt="item.alt"
+                <!-- <NuxtImg :class="{ 'item': true, 'mobile': deviceType == DeviceType.Mobile }"
+                    :src="`/images/${theme == ThemeType.Dark ? 'dark' : 'light'}/${item.icon}`" :alt="item.alt"
+                    loading="eager" /> -->
+                    <img :class="{ 'item': true, 'mobile': deviceType == DeviceType.Mobile }"
+                    :src="`/images/${theme == ThemeType.Dark ? 'dark' : 'light'}/${item.icon}`" :alt="item.alt"
                     loading="eager" />
             </NuxtLink>
         </li>

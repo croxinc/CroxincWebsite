@@ -1,7 +1,8 @@
 <template>
     <div :class="{ 'container': true, 'mobile': deviceType == DeviceType.Mobile }">
         <NuxtLink to="/" :class="{ 'logos': true, 'mobile': deviceType == DeviceType.Mobile }">
-            <NuxtImg class="logo" :src="`/${theme == ThemeType.Dark ? 'dark' : 'light'}/logo.png`" loading="eager" />
+            <!-- <NuxtImg class="logo" :src="`/images/${theme == ThemeType.Dark ? 'dark' : 'light'}/logo.png`" loading="eager" /> -->
+            <img class="logo" :src="`/images/${theme == ThemeType.Dark ? 'dark' : 'light'}/logo.png`" loading="eager" />
         </NuxtLink>
         <div :class="{ 'services': true, 'mobile': deviceType == DeviceType.Mobile }">
             <TheService :theme="theme" :activedPage="activedPage" :lastPage="lastPage" :deviceType="deviceType" />
@@ -13,12 +14,12 @@
 </template>
 
 <script setup lang="ts">
-import { ThemeType } from '~/types/ThemeType';
-import { DeviceType } from '~/types/DeviceType';
+import { ThemeType } from '@/types/ThemeType';
+import { DeviceType } from '@/types/DeviceType';
 import TheMedia from './TheMedia.vue';
 import TheService from './TheService.vue';
-import { PageType } from '~/types/PageType';
-import { OperatorType } from '~/types/OperatorType';
+import { PageType } from '@/types/PageType';
+import { OperatorType } from '@/types/OperatorType';
 const theme = defineModel<ThemeType>('theme')
 const deviceType = defineModel<DeviceType>('deviceType')
 const activedPage = defineModel<PageType>('activedPage')

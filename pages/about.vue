@@ -24,10 +24,12 @@
                 </transition>
             </div>
         </div>
-        <div :class="{ 'imageSection': true, 'mobile': deviceType == DeviceType.Mobile }">
+        <div :class="{ '/imagesection': true, 'mobile': deviceType == DeviceType.Mobile }">
             <transition name="slide-up" appear>
-                <NuxtImg v-if="showContent" :class="{ 'aboutImage': true, 'mobile': deviceType == DeviceType.Mobile }"
-                    src="/bg_about.jpg" alt="about" loading="eager" />
+                <!-- <NuxtImg v-if="showContent" :class="{ 'aboutImage': true, 'mobile': deviceType == DeviceType.Mobile }"
+                    src="/images/bg_about.jpg" alt="about" loading="eager" /> -->
+                    <img v-if="showContent" :class="{ 'aboutImage': true, 'mobile': deviceType == DeviceType.Mobile }"
+                    src="/images/bg_about.jpg" alt="about" loading="eager" />
             </transition>
         </div>
     </div>
@@ -66,7 +68,7 @@ const AnimationBegin = () => {
 }
 onBeforeRouteLeave(beforeLeave);
 onMounted(() => {
-    showContent.value=true;
+    showContent.value = true;
 })
 </script>
 
@@ -106,6 +108,7 @@ onMounted(() => {
     justify-content: flex-start;
     width: 50%;
     padding-left: 96px;
+
     &.mobile {
         position: absolute;
         top: 0;
@@ -143,6 +146,7 @@ onMounted(() => {
     max-height: 50vh;
     object-fit: contain;
     z-index: -100;
+
     &.mobile {
         position: fixed;
         height: 50vh;

@@ -3,7 +3,8 @@
         <transition name="home-effects" @after-appear="leaveAnimationCompleted" @after-leave="leaveAnimationCompleted"
             @before-leave="AnimationBegin" @before-enter="AnimationBegin" appear mode="out-in">
             <div v-if="showContent" class="background">
-                <NuxtImg src="bg_home.jpg" alt="background" loading="eager" style="width: 100%;height: 100%;" />
+                <!-- <NuxtImg src="/images/bg_home.jpg" alt="background" loading="eager" style="width: 100%;height: 100%;" /> -->
+                <img src="/images/bg_home.jpg" alt="background" loading="eager" style="width: 100%;height: 100%;" />
             </div>
         </transition>
         <transition name="overlay-effects" appear>
@@ -16,7 +17,8 @@
         </transition>
         <div class="flicker">
             <NuxtLink to="/about">
-                <NuxtImg src="/scroll_down.png" alt="scroll down" class="scroll-down" loading="eager" />
+                <!-- <NuxtImg src="/images/scroll_down.png" alt="scroll down" class="scroll-down" loading="eager" /> -->
+                <img src="/images/scroll_down.png" alt="scroll down" class="scroll-down" loading="eager" />
             </NuxtLink>
         </div>
     </div>
@@ -74,8 +76,6 @@ onMounted(() => {
     width: 100vw;
     height: 100vh;
     background-repeat: no-repeat;
-    /* background-image: url('~/assets/images/bg_home.jpg'); */
-    /* background-image: url('/images/bg_home.jpg'); */
     background-size: cover;
     background-position: center;
     z-index: -1;

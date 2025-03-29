@@ -19,10 +19,10 @@ interface Service {
     displayText: string
 }
 const services = ref<Service[]>([
-    { displayText: '流程規劃', path: '/MINICRM.png' },
-    { displayText: '訂單系統', path: '/order.png' },
-    { displayText: '跨系統整合', path: '/integrate.png' },
-    { displayText: '內部系統開發', path: '/內部系統管理開發.png' },
+    { displayText: '流程規劃', path: '/images/MINICRM.png' },
+    { displayText: '訂單系統', path: '/images/order.png' },
+    { displayText: '跨系統整合', path: '/images/integrate.png' },
+    { displayText: '內部系統開發', path: '/images/internalsystem.png' },
 ])
 </script>
 

@@ -1,9 +1,9 @@
 <template>
-    <div :class="['container',{'mobile': deviceType == DeviceType.Mobile}]">
+    <div :class="['container', { 'mobile': deviceType == DeviceType.Mobile }]">
         <div :class="{ 'flowchart': true, 'mobile': deviceType == DeviceType.Mobile }">
             <div v-for="(step, index) in steps" :key="index">
-                <TheProcessItem :title="step.title" :description="step.description" :image="step.image" :mobile-image="step.mobileImage"
-                    :isArrow="step.isArrow" :index="index" :deviceType="deviceType"></TheProcessItem>
+                <TheProcessItem :title="step.title" :description="step.description" :image="step.image"
+                    :mobile-image="step.mobileImage" :isArrow="step.isArrow" :index="index" :deviceType="deviceType" />
             </div>
         </div>
         <!-- <transition name="overlay-effects" @after-appear="leaveAnimationCompleted"
@@ -22,7 +22,7 @@
 definePageMeta({ layout: 'main' })
 import { ref } from 'vue';
 import TheProcessItem from '~/componenets/TheProcessItem.vue';
-import { DeviceType } from '~/types/DeviceType';
+import { DeviceType } from '@/types/DeviceType';
 
 const showContent = ref(true);
 const emit = defineEmits(['AnimationCompleted', 'AnimationStart']);
@@ -36,13 +36,13 @@ interface Step {
 }
 
 const steps = ref<Step[]>([
-    { title: '釐清專案', description: ['需求評估', '初步報價'], image: '/釐清專案.png', isArrow: false, mobileImage: '/釐清專案.png' },
-    { isArrow: true, title: '', description: [''], image: '/right-arrow.png', mobileImage: '/down-arrow.png' },
-    { title: '確認合作', description: ['項目細節討論', '專案時間訂定', '訂金支付'], image: '/確認合作.png', isArrow: false, mobileImage: '/確認合作.png' },
-    { isArrow: true, title: '', description: [''], image: '/right-arrow.png', mobileImage: '/down-arrow.png' },
-    { title: '專案進行', description: ['執行項目說明', '規格文件確認', '階段交付專案', '專案測試'], image: '/專案進行.png', isArrow: false, mobileImage: '/專案進行.png' },
-    { isArrow: true, title: '', description: [''], image: '/right-arrow.png', mobileImage: '/down-arrow.png' },
-    { title: '驗收結案', description: ['專案驗收', '尾款支付', '專案保固'], image: '/驗收結案.png', isArrow: false, mobileImage: '/驗收結案.png' },
+    { title: '釐清專案', description: ['需求評估', '初步報價'], image: '/images/釐清專案.png', isArrow: false, mobileImage: '/images/釐清專案.png' },
+    { isArrow: true, title: '', description: [''], image: '/images/right-arrow.png', mobileImage: '/images/down-arrow.png' },
+    { title: '確認合作', description: ['項目細節討論', '專案時間訂定', '訂金支付'], image: '/images/確認合作.png', isArrow: false, mobileImage: '/images/確認合作.png' },
+    { isArrow: true, title: '', description: [''], image: '/images/right-arrow.png', mobileImage: '/images/down-arrow.png' },
+    { title: '專案進行', description: ['執行項目說明', '規格文件確認', '階段交付專案', '專案測試'], image: '/images/專案進行.png', isArrow: false, mobileImage: '/images/專案進行.png' },
+    { isArrow: true, title: '', description: [''], image: '/images/right-arrow.png', mobileImage: '/images/down-arrow.png' },
+    { title: '驗收結案', description: ['專案驗收', '尾款支付', '專案保固'], image: '/images/驗收結案.png', isArrow: false, mobileImage: '/images/驗收結案.png' },
 ]);
 
 let resolveNavigation: (() => void) | null = null;
@@ -58,15 +58,15 @@ const leaveAnimationCompleted = () => {
 };
 
 const beforeLeave = () => {
-    return new Promise<void>((resolve) => {
-        if (!isAnimating) {
-            showContent.value = false;
-            isAnimating = true;
-            resolveNavigation = resolve;
-        } else {
-            resolve();
-        }
-    });
+    // return new Promise<void>((resolve) => {
+    //     if (!isAnimating) {
+    //         showContent.value = false;
+    //         isAnimating = true;
+    //         resolveNavigation = resolve;
+    //     } else {
+    //         resolve();
+    //     }
+    // });
 };
 
 const AnimationBegin = () => {
@@ -88,7 +88,8 @@ onMounted(() => {
     min-height: 60%;
     padding: 24px 0;
     margin: 0 auto;
-    &.mobile{
+
+    &.mobile {
         padding-top: 0;
     }
 

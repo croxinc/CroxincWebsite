@@ -3,7 +3,10 @@
         <div :class="{ 'cardContainer': true, 'mobile': deviceType == DeviceType.Mobile }">
             <div class="imageContainer">
                 <Transition name="slide-up-item" :class="{ 'mobile': deviceType == DeviceType.Mobile }" appear>
-                    <NuxtImg
+                    <!-- <NuxtImg
+                        :class="{ 'itemImage': true, 'mobile': deviceType == DeviceType.Mobile, 'arrowImage': isArrow }"
+                        :src="itemImage" :alt="itemTitle" :style="itemStyle" loading="eager" /> -->
+                        <img
                         :class="{ 'itemImage': true, 'mobile': deviceType == DeviceType.Mobile, 'arrowImage': isArrow }"
                         :src="itemImage" :alt="itemTitle" :style="itemStyle" loading="eager" />
                 </Transition>

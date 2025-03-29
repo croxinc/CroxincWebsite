@@ -19,9 +19,9 @@
 </template>
 <script setup lang="ts">
 import TheHeader from '~/componenets/TheHeader.vue';
-import { DeviceType } from '~/types/DeviceType';
-import { PageType } from '~/types/PageType';
-import { ThemeType } from '~/types/ThemeType';
+import { DeviceType } from '@/types/DeviceType';
+import { PageType } from '@/types/PageType';
+import { ThemeType } from '@/types/ThemeType';
 const route = useRoute();
 const homeButtonType = ref<ThemeType>(ThemeType.Default);
 const isAnimationCompleted = ref(false);
@@ -70,7 +70,7 @@ onUnmounted(() => {
 
 
 useHead({
-    title: '雙向數位創意 | CROXINC Studio - 客製化系統、流程自動化專家',
+    title: '雙向數位創意 | CROXINC Studio - 客製化系統、數據分析',
     link: [
         { rel: 'icon', type: 'image/x-icon', href: '/logo.ico' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },

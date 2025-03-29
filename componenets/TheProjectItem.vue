@@ -9,7 +9,9 @@
         </div>
         <div :class="{ 'imageContainer': true, 'mobile': deviceType == DeviceType.Mobile }">
             <Transition name="slide-up-item" appear>
-                <NuxtImg v-if="props.showContent" :class="['item-image', { 'mobile': deviceType == DeviceType.Mobile }]"
+                <!-- <NuxtImg v-if="props.showContent" :class="['item-image', { 'mobile': deviceType == DeviceType.Mobile }]"
+                    :src="props.image" :alt="props.title" :style="itemStyle" loading="eager" /> -->
+                    <img v-if="props.showContent" :class="['item-image', { 'mobile': deviceType == DeviceType.Mobile }]"
                     :src="props.image" :alt="props.title" :style="itemStyle" loading="eager" />
             </Transition>
         </div>
