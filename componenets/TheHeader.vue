@@ -5,10 +5,10 @@
             <img class="logo" :src="`/images/${theme == ThemeType.Dark ? 'dark' : 'light'}/logo.png`" loading="eager" />
         </NuxtLink>
         <div :class="{ 'services': true, 'mobile': deviceType == DeviceType.Mobile }">
-            <TheService :theme="theme" :activedPage="activedPage" :lastPage="lastPage" :deviceType="deviceType" />
+            <TheService :theme="theme" :activedPage="activedPage" :lastPage="lastPage" :deviceType="deviceType" v-if="isResourceLoaded" />
         </div>
         <div :class="{ 'medias': true, 'mobile': deviceType == DeviceType.Mobile }">
-            <TheMedia :theme="theme" />
+            <TheMedia :theme="theme" @loaded="loadedResource"/>
         </div>
     </div>
 </template>
@@ -33,6 +33,13 @@ const opType = ref<OperatorType>(OperatorType.None);
 const scrollPosition = ref(0)
 const windowHeight = ref(0)
 const pageHeight = ref(0)
+const isResourceLoaded = ref(false)
+
+
+function loadedResource(){
+    isResourceLoaded.value = true;
+
+}
 
 // // 檢查是否滾動到了頁面的頂部或底部
 // const checkScrollEnd = (event: WheelEvent) => {
