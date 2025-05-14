@@ -151,6 +151,7 @@ onUnmounted(() => {
     letter-spacing: 2.0px;
     font-size: 18px;
     line-height: 18px;
+    user-select: none;
 
     /* // 處理中英文字不同高的問題 */
     &.mobile {

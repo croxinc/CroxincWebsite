@@ -81,6 +81,13 @@ onMounted(() => {
     z-index: -1;
 }
 
+.background img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
 
 .flicker {
     position: absolute;
@@ -123,6 +130,9 @@ onMounted(() => {
     justify-content: center;
     /* nowap */
     white-space: nowrap;
+    /* 加陰影 */
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+    user-select: none;
 
     /* text-align: center; */
     /* background-color: white; */

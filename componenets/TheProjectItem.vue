@@ -39,6 +39,7 @@ const deviceType = defineModel<DeviceType>('deviceType')
     flex-direction: column;
     align-items: center;
     text-align: center;
+    user-select: none;
 }
 
 .imageContainer {

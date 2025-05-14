@@ -58,6 +58,7 @@ onMounted(() => {
     align-items: center;
     text-align: center;
     overflow: visible;
+    user-select: none;
 
     &.mobile {
         font-size: 1px;
