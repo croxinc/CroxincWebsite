@@ -7,9 +7,12 @@ export default defineNuxtConfig({
   ssr: false,
   app: {
     baseURL: '/',
-    buildAssetsDir: 'assets/',
+    buildAssetsDir: 'assets/',    
   },
   image:{
     dir: 'public'
+  },
+  devServer: {
+    port: 3001,
   },
 })
