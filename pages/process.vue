@@ -84,7 +84,7 @@ onMounted(() => {
     align-items: center;
     justify-content: center;
     position: relative;
-    max-width: 100vw;
+    max-width: 90vw;
     min-height: 60%;
     padding: 24px 0;
     margin: 0 auto;
@@ -100,6 +100,7 @@ onMounted(() => {
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    gap: 10px;
 
     &.mobile {
         flex-direction: column;
