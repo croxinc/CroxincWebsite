@@ -92,6 +92,24 @@ useHead({
         { property: 'og:image:width', content: '294' },
         { property: 'og:image:height', content: '263' },
         { name: 'image', content: 'https://www.croxinc.com/images/croxinc.png' }
+    ],
+    script: [
+        {
+            src: 'https://www.googletagmanager.com/gtag/js?id=G-X3N6W8Z8D7', // 請將 G-XXXXXXXXXX 換成你的 GA ID
+            async: true
+        },
+        {
+            type: 'text/javascript',
+            innerHTML: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-X3N6W8Z8D7'); 
+            `,
+            // 防止 Nuxt 移除此內嵌 script
+            tagPosition: 'head',
+            key: 'ga-inline-script'
+        }
     ]
 });
 </script>
